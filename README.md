@@ -27,7 +27,8 @@ This study aims to generate a negative-answering RQ by using valence-reversed co
 the chatbot more appropriate and human-like in a conversation. Additionally, we use a situation classifier analyzing 
 previous contexts to decide when to generate a literal response, sarcastic response, and RQ.
 
-You can get more information by reading the final_report_fin_version.pdf.
+You can get more information by reading 
+the [final_report_fin_version.pdf](https://github.com/sun510001/RQ_Chatbot/blob/master/final_report_fin_version.pdf).
 
 ## Preparations
 1. Install the environment
