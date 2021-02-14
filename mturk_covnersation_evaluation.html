@@ -1,0 +1,114 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet">
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+    <crowd-instructions link-text="View instructions" link-type="button">
+        <short-summary>
+            <h2> Instructions </h2>
+            <h3> Rhetorical question </h3>
+            <p>A rhetorical question(RQ) is a question someone asks without expecting an answer.
+                The question might not have an answer, or it might have an obvious answer.
+                People use RQ to achieve a pragmatic goal,
+                such as structuring an argument, being persuasive, emphasizing a point, or being ironic or sarcastic.</p>
+            <p><b>Example 1</b>: </p>
+                <p><b>Context 0</b> -> Spare The Rod , Spoil The Child . Gee , I Wonder Where That Came From ? ( sarcasm ) URL <br>
+                <b>Context 1</b> -> @USER @USER @USER No jokes Joe . This is where all things started to go wrong <br>
+                <b>Response</b>  => @USER @USER @USER What Jokes ? Spare The Rod , Spoil The Child . It Comes From The Bible That These URL <br>
+            </p>
+            <p>The Response in Example 1 is a <b>RQ</b>, because <b>"What Jokes ?"</b> is not a information-seeking question. It emphasizes a point.</p>
+
+            <p><b>Example 2</b>: </p>
+                <p><b>Context 0</b> -> Do you know me? <br>
+                <b>Response</b>  => Does an art student know Picasso? <br>
+            </p>
+            <p>The Response in Example 2 is a <b>RQ</b>. It has an sarcastic meaning.</p>
+            <h3> Sarcasm </h3>
+            <p>Sarcasm is the use of words usually used to either mock or annoy someone,
+                or for humorous purposes. Sarcasm may employ ambivalence, although it is not necessarily ironic.
+                Most noticeable in spoken word, sarcasm is mainly distinguished by the inflection with which it is
+                spoken and is largely context-dependent.</p>
+            <p><b>Example 1</b>: </p>
+            <p>I love going to the doctor.</p>
+
+        </short-summary>
+    </crowd-instructions>
+    <section class="container" id="All">
+        <div class="row" id="workContent_0">
+            <h3>Directions: </h3>
+            <p>We generated some responses that is according to previous contexts by using different methods.<br>
+            Please read contexts and responses, and then answer questions below.<br>
+            Emoji symbols are replace by the text, such as, <b>:angry_face:</b>.<br>
+            The conversations may not be completely.<br>
+                You can click <b>View instructions</b> for more information about <b>rhetorical question</b> and <b>sarcasm</b>.</p>
+            <p>======================</p>
+            <h3>Conversation: </h3>
+            <p>Context 1: ${context_2}</p>
+            <p>Context 2: ${context_1}</p>
+            <br>
+            <p>Response A: ${response}</p>
+            <p>Response B: ${robot_res}</p>
+            <p>Response C: ${sg_res}</p>
+            <p>Response D: ${rq_res}</p>
+            <p>======================</p>
+        </div>
+        <div class="row" id="workContent_1">
+        <h3>Questions: </h3>
+            <div class="col-6 col-md-4">
+<!--                <div class="form-group">-->
+                <div id="rq" style="margin-top: 20px">
+                    <p><b>1. </b>Are these responses <b>rhetorical questions</b>? (Check the check box if it is true)</p>
+                    <p>Responses A <crowd-checkbox name="is_rq" value="a"></crowd-checkbox></p>
+                    <p>Responses B <crowd-checkbox name="is_rq" value="b"></crowd-checkbox></p>
+                    <p>Responses C <crowd-checkbox name="is_rq" value="c"></crowd-checkbox></p>
+                    <p>Responses D <crowd-checkbox name="is_rq" value="d"></crowd-checkbox></p>
+                </div></div>
+            <div class="col-6 col-md-4">
+<!--                <div class="form-group">-->
+                <div id="sarc" style="margin-top: 20px">
+                    <p><b>2. </b>Are these responses <b>sarcastic</b>? (Check the check box if it is true)</p>
+                    <p>Responses A <crowd-checkbox name="is_s" value="a"></crowd-checkbox></p>
+                    <p>Responses B <crowd-checkbox name="is_s" value="b"></crowd-checkbox></p>
+                    <p>Responses C <crowd-checkbox name="is_s" value="c"></crowd-checkbox></p>
+                    <p>Responses D <crowd-checkbox name="is_s" value="d"></crowd-checkbox></p>
+                </div></div>
+<!--            <div class="col-6 col-md-4">-->
+<!--&lt;!&ndash;                <div class="form-group">&ndash;&gt;-->
+<!--                <div id="rq3" style="margin-top: 20px">-->
+<!--                    <p><b>3. </b>Are these responses <b>emotional</b>? (Check the check box if it is true)</p>-->
+<!--                    <p>Responses A <crowd-checkbox name="is_emo" value="a"></crowd-checkbox></p>-->
+<!--                    <p>Responses B <crowd-checkbox name="is_emo" value="b"></crowd-checkbox></p>-->
+<!--                    <p>Responses C <crowd-checkbox name="is_emo" value="c"></crowd-checkbox></p>-->
+<!--                    <p>Responses D <crowd-checkbox name="is_emo" value="d"></crowd-checkbox></p>-->
+<!--                </div></div>-->
+            <div class="w-100"></div>
+        </div>
+        <div class="row">
+            <br>
+        </div>
+        <div class="row" id="workContent_2">
+            <div class="col-6 col-md-4">
+<!--            <div class="form-group">-->
+                <p><b>3. </b>How <b>appropriate</b> is the response in the conversation?<br>
+            (On scale of 1 (Not Relevant At All) to 5 (Highly Relevant))</p>
+            <p>Responses A <crowd-slider name="app_a" min="1" max="5" step="1" pin="true" required></crowd-slider></p>
+            <p>Responses B <crowd-slider name="app_b" min="1" max="5" step="1" pin="true" required></crowd-slider></p>
+            <p>Responses C <crowd-slider name="app_c" min="1" max="5" step="1" pin="true" required></crowd-slider></p>
+            <p>Responses D <crowd-slider name="app_d" min="1" max="5" step="1" pin="true" required></crowd-slider></p>
+            </div>
+
+            <div class="col-6 col-md-4">
+<!--            <div class="form-group">-->
+                <p><b>4. </b>How <b>human-like</b> is the response?<br>
+            (On scale of 1 (Not human-like At All) to 5 (Highly human-like))</p>
+            <p>Responses A <crowd-slider name="hl_a" min="1" max="5" step="1" pin="true" required></crowd-slider></p>
+            <p>Responses B <crowd-slider name="hl_b" min="1" max="5" step="1" pin="true" required></crowd-slider></p>
+            <p>Responses C <crowd-slider name="hl_c" min="1" max="5" step="1" pin="true" required></crowd-slider></p>
+            <p>Responses D <crowd-slider name="hl_d" min="1" max="5" step="1" pin="true" required></crowd-slider></p>
+            </div>
+        </div></div>
+    </section>
+</crowd-form>

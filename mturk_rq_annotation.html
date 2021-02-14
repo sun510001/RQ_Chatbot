@@ -1,0 +1,74 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+    <!-- The crowd-classifier element will create a tool for the Worker to select the
+           correct answer to your question -->
+
+
+    <crowd-classifier
+      name="rq"
+      categories="['Yes', 'No']"
+      header="Is the Response a Rhetorical quesiton?"
+    >
+
+      <classification-target>
+        <!-- The text you want classified will be substituted for the "text" variable when you
+               publish a batch with a CSV input file containing multiple text items  -->
+        <p>Directions:<br> Read the conversation below and detect whether the <b>response</b>
+        is <b>Rhetorical question</b> or not.<br>
+        The conversation may not be completely.<br>
+        URLs are replaced by <b>:URL:</b>.<br>
+        Emoji symbols are replace by the text, such as, <b>:angry_face:</b>.<br>
+        You can click "Instructions" for more information about RQ.</p>
+        <p>======================</p>
+        ${mer_context}
+      </classification-target>
+     <!-- Use the short-instructions section for quick instructions that the Worker
+            will see while working on the task. Including some basic examples of
+            good and bad answers here can help get good results. You can include
+            any HTML here. -->
+
+      <!--<short-instructions>-->
+      <!-- Choose the primary sentiment that is expressed by the text. -->
+      <!--</short-instructions>-->
+        <short-instructions>
+            <h2> Instructions </h2>
+            <p>A rhetorical question(RQ) is a question someone asks without expecting an answer.
+                The question might not have an answer, or it might have an obvious answer.</p>
+            <p>People use RQ to achieve a pragmatic goal,
+            such as structuring an argument, being persuasive, emphasizing a point, or being ironic.</p>
+            <p><b>Example 1</b>: </p>
+                <p><b>Context 0</b> -> Spare The Rod , Spoil The Child . Gee , I Wonder Where That Came From ? ( sarcasm ) URL <br>
+                <b>Context 1</b> -> @USER @USER @USER No jokes Joe . This is where all things started to go wrong <br>
+                <b>Response</b>  => @USER @USER @USER What Jokes ? Spare The Rod , Spoil The Child . It Comes From The Bible That These URL <br>
+            </p>
+            <p>The Response in Example 1 is a <b>RQ</b>, because <b>"What Jokes ?"</b> is not a information-seeking question. It emphasizes a point.</p>
+
+            <p><b>Example 2</b>: </p>
+                <p><b>Context 0</b> -> Do you know me? <br>
+                <b>Response</b>  => Does an art student know Picasso? <br>
+            </p>
+            <p>The Response in Example 2 is a <b>RQ</b>, too.</p>
+
+
+        </short-instructions>
+      <!-- Use the full-instructions section for more detailed instructions that the
+            Worker can open while working on the task. Including more detailed
+            instructions and additional examples of good and bad answers here can
+            help get good results. You can include any HTML here. -->
+      <!--<full-instructions header="Sentiment Analysis Instructions">-->
+      <!--  <p><strong>Positive</strong> sentiment include: joy, excitement, delight</p>-->
+      <!--  <p><strong>Negative</strong> sentiment include: anger, sarcasm, anxiety</p>-->
+      <!--  <p><strong>Neutral</strong>: neither positive or negative, such as stating a fact</p>-->
+      <!--  <p><strong>N/A</strong>: when the text cannot be understood</p>-->
+      <!--  <p>When the sentiment is mixed, such as both joy and sadness, use your judgment to choose the stronger emotion.</p>-->
+      <!--</full-instructions>-->
+
+    </crowd-classifier>
+</crowd-form>
