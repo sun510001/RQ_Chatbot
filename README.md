@@ -2,7 +2,7 @@
 
 Clone this project:
 ```script
-    github clone https://github.com/sun510001/RQ_Chatbot.git
+github clone https://github.com/sun510001/RQ_Chatbot.git
 ```
 
 ## Introduction
@@ -33,89 +33,89 @@ the [final_report_fin_version.pdf](https://github.com/sun510001/RQ_Chatbot/blob/
 ## Preparations
 1. Install the environment
     ```script
-        conda env create -f environment.yml
+    conda env create -f environment.yml
     ```
 2. Download models
    * Transformers pre-training models
-    ```script
+        ```script
         cd Situation_Classification_for_SRL/
         python run_preproc.py
-    ```
+        ```
    * Fine-tuned models
-   ```script
-      Download files from https://drive.google.com/drive/folders/1XlXAV2fIEeTSwyBMx0dKCVevsA3XfWM_?usp=sharing
-      cd Master_research_model
-      mv roberta-base_model Situation_Classification_for_SRL/data/
-      mv bert-base-uncased-model RQ_generator/data/
-   ```
+       ```script
+       Download files from https://drive.google.com/drive/folders/1XlXAV2fIEeTSwyBMx0dKCVevsA3XfWM_?usp=sharing
+       cd Master_research_model
+       mv roberta-base_model Situation_Classification_for_SRL/data/
+       mv bert-base-uncased-model RQ_generator/data/
+       ```
 3. Download the sarcasm generation module, set the module by reading it's README.md and then replace 
    files.
     ```script
-        clone https://github.com/tuhinjubcse/SarcasmGeneration-ACL2020.git
-        cd SarcasmGeneration-ACL2020/
-        cat README.md
-        do settings... 
-        mv ../sg_file/* SarcasmGeneration-ACL2020/
+    clone https://github.com/tuhinjubcse/SarcasmGeneration-ACL2020.git
+    cd SarcasmGeneration-ACL2020/
+    cat README.md
+    do settings... 
+    mv ../sg_file/* SarcasmGeneration-ACL2020/
     ```
 4. Setting for RQ generator module.
     * Download bert-gec
-    ```script
+        ```script
         cd RQ_generator/
         git clone https://github.com/kanekomasahiro/bert-gec.git
-    ```
+        ```
     * Commonsense knowledge representation model for scoring arbitrary tuples.
-    ```script
-        Cd RQ_generator/data
+        ```script
+        cd RQ_generator/data
         wget https://ttic.uchicago.edu/~kgimpel/comsense_resources/ckbc-demo.tar.gz
         tar -xvzf ckbc-demo.tar.gz
         rm ckbc-demo.tar.gz
-    ```
+        ```
     * Download stanford-parser-4.2.0.zip 
-    ```script
+        ```script
          wget https://nlp.stanford.edu/software/stanford-parser-4.2.0.zip
          tar -xvzf stanford-parser-4.2.0.zip
          rm stanford-parser-4.2.0.zip
-    ```
+        ```
 
 ## For evaluation
 1. Generate literal responses
     * Uncomment codes that is under the ``predict/for evaluation`` in run_predict.py, 
        and comment out all codes that is under the ``for chatbot``.
     * Run the literal generator
-    ```script
+        ```script
         python run_generate_evaluation.py
-    ```
+        ```
   
 2. Generate the situation classification
     ```script
-        cd Situation_Classification_for_SRL/
-        python run_predict.py
+    cd Situation_Classification_for_SRL/
+    python run_predict.py
     ```
 
 3. Generate the sarcastic responses
     ```script
-        clone https://github.com/tuhinjubcse/SarcasmGeneration-ACL2020.git
-        mv generate_sarcasm.py SarcasmGeneration-ACL2020/
+    clone https://github.com/tuhinjubcse/SarcasmGeneration-ACL2020.git
+    mv generate_sarcasm.py SarcasmGeneration-ACL2020/
     ```
 
     * Change the conda_path to your python environment path
-    ```script
+        ```script
         cd SarcasmGeneration-ACL2020/
         vim generate_sarcasm.py
         conda_path = '/home/aquamarine/sunqifan/anaconda3/envs/r_cla/bin/python3.6'
         python generate_sarcasm.py
-    ```
+        ```
 
 4. Generate the RQ responses
     ```script
-        python run_train_classifier.py
+    python run_train_classifier.py
     ```
     * If your memory or gpu memory is not enough for running whole data in the dataset, you can run it in a section.
         
 ## For chatbot
 You can run the run_chatbot.py directly after you did [preparations](#Preparations).
 ```script
-    Python run_chatbot.py
+Python run_chatbot.py
 ```
 
 ## Train models
@@ -125,14 +125,25 @@ If you want to train model, please read it.
 from [Twitter and Reddit data for the Shared Task](https://github.com/EducationalTestingService/sarcasm)
 * Pre-processed dataset is ``sarcasm_merge_triple_v8.csv`` in ``Situation_Classification_for_SRL/data/``.
 * You can set the type of training models in ``__init__.py/TrainModelConfig``.
-```script
+    ```script
     cd Situation_Classification_for_SRL/
     python run_train.py
-```
+    ```
 
 ### RQ_detection in RQ generator
 * You can set the type of training models in ``__init__.py/TrainModelConfigV2``.
-```script
+    ```script
     cd RQ_generator/
     python run_train.py
+    ```
+
+## Citing Us
+Email me at sqf121@gmail.com for any problems/doubts. Further you can raise issues on github, or suggest improvements.
+Please leave a star and cite us if you use our code or data
+```script
+@article{RQChatbot,
+author = {Qifan Sun},
+title = {Automatic Generation of Rhetorical Questions and Its Application to a Chatbot},
+year = {2021}
+}
 ```
