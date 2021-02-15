@@ -139,7 +139,7 @@ from [Twitter and Reddit data for the Shared Task](https://github.com/Educationa
 
 ## Citing Us
 Email me at sqf121@gmail.com for any problems/doubts. Further you can raise issues on github, or suggest improvements.
-Please leave a star and cite us if you use our code or data
+Please leave a star and cite us if you use our code ,data or report
 ```script
 @article{RQChatbot,
 author = {Qifan Sun},
