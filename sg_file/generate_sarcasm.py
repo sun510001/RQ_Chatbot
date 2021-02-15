@@ -7,6 +7,17 @@ import os
 
 os.environ['MKL_THREADING_LAYER'] = 'GNU' # if the cpu in your pc is AMD, use this.
 
+# roberta = getRoberta()
+#
+# utterance = sys.argv[1]
+# rov = reverse_valence(utterance).capitalize()
+# op = retrieveCommonSense(utterance)
+# commonsense, extra = op[0], op[1]
+# mostincongruent = rankContext(roberta,rov,commonsense,extra)
+# sarcasm = rov + ' '+ mostincongruent
+# print(sarcasm)
+
+
 def sarc_gen(utterance, path):
     roberta = getRoberta()
     all = []
@@ -46,6 +57,15 @@ def sarc_gen(utterance, path):
 
 
 if __name__ == '__main__':
+    # utt_list = ["the week started with missing bus and being stranded.", "banks give money to rich people.",
+    #             "it is difficult to explain taxation to republicans.", "stressed about getting failed in exams.",
+    #             "annoyed by how a white wall is called a painting.", "hate when parents question about money.",
+    #             "this stuff is unbelievable."]
+    # # utt_list = ["It is difficult to be sad"]
+    # utt_list = ["Being stuck in airport is damn boring.", "banks give money to rich people.",
+    #                 "it is difficult to explain taxation to republicans.",]
+    # utt_list = ["Tell me why that doesn't change the fact that you were in"]
+
     """for evaluation"""
     # df = pd.read_csv('../dialogue_for_train_after_cla.csv')
     # df = df.dropna(subset=['robot_res'])

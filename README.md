@@ -35,19 +35,27 @@ the [final_report_fin_version.pdf](https://github.com/sun510001/RQ_Chatbot/blob/
     ```script
         conda env create -f environment.yml
     ```
-2. Download transformers pre-training models
+2. Download models
+   * Transformers pre-training models
     ```script
         cd Situation_Classification_for_SRL/
         python run_preproc.py
     ```
-3. Download the sarcasm generation module, set for it by reading it's README.md and then replace the generate_sarcasm.py 
-   file.
+   * Fine-tuned models
+   ```script
+      Download files from https://drive.google.com/drive/folders/1XlXAV2fIEeTSwyBMx0dKCVevsA3XfWM_?usp=sharing
+      cd Master_research_model
+      mv roberta-base_model Situation_Classification_for_SRL/data/
+      mv bert-base-uncased-model RQ_generator/data/
+   ```
+3. Download the sarcasm generation module, set the module by reading it's README.md and then replace 
+   files.
     ```script
         clone https://github.com/tuhinjubcse/SarcasmGeneration-ACL2020.git
-        cd SarcasmGeneration-ACL2020
+        cd SarcasmGeneration-ACL2020/
         cat README.md
-        setting... 
-        mv ../generate_sarcasm.py SarcasmGeneration-ACL2020/
+        do settings... 
+        mv ../sg_file/* SarcasmGeneration-ACL2020/
     ```
 4. Setting for RQ generator module.
     * Download bert-gec
