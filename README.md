@@ -76,16 +76,17 @@ the [final_report_fin_version.pdf](https://github.com/sun510001/RQ_Chatbot/blob/
          tar -xvzf stanford-parser-4.2.0.zip
          rm stanford-parser-4.2.0.zip
         ```
-## Running the chatbot
+## The Chatbot Mode
 You can run the run_chatbot.py directly after you did [preparations](#Preparations).
 ```script
 Python run_chatbot.py
 ```
 
-## Running the evaluation
+## The Evaluation Mode
+The evaluation mode can output all types of responses in any situation of a conversation.
 1. Generate literal responses
-    * Uncomment codes that is under the ``predict/for evaluation`` in run_predict.py, 
-       and comment out all codes that is under the ``for chatbot``.
+    * Uncomment codes that are under the ``predict/for evaluation`` in run_predict.py, 
+       and comment out all codes that are under the ``for chatbot``.
     * Run the literal generator
         ```script
         python run_generate_evaluation.py
@@ -115,11 +116,11 @@ Python run_chatbot.py
     ```script
     python run_train_classifier.py
     ```
-    * If your memory or gpu memory is not enough for running whole data in the dataset, you can run it in a section.
+    * If your memory or GPU memory is not enough for running whole data in the dataset, you can run it in a section.
     
 
 ## Training models
-If you want to train model, please read it.
+If you want to train models for the situation classification and the RQ generator, please read it.
 ### Situation classification for SRL (Sarcastic, Rhetorical question and Literal responses)
 * We use the dataset
 from [Twitter and Reddit data for the Shared Task](https://github.com/EducationalTestingService/sarcasm)
@@ -138,8 +139,8 @@ from [Twitter and Reddit data for the Shared Task](https://github.com/Educationa
     ```
 
 ## Citing Us
-Email me at sqf121@gmail.com for any problems/doubts. Further you can raise issues on github, or suggest improvements.
-Please leave a star and cite us if you use our code ,data or report
+Please email me at sqf121@gmail.com for any problems/doubts. Further, you can raise issues on Github or suggest improvements.
+Please leave a star and cite us if you use our code, data, or report
 ```script
 @article{RQChatbot,
 author = {Qifan Sun},
