@@ -76,8 +76,13 @@ the [final_report_fin_version.pdf](https://github.com/sun510001/RQ_Chatbot/blob/
          tar -xvzf stanford-parser-4.2.0.zip
          rm stanford-parser-4.2.0.zip
         ```
+## Running the chatbot
+You can run the run_chatbot.py directly after you did [preparations](#Preparations).
+```script
+Python run_chatbot.py
+```
 
-## For evaluation
+## Running the evaluation
 1. Generate literal responses
     * Uncomment codes that is under the ``predict/for evaluation`` in run_predict.py, 
        and comment out all codes that is under the ``for chatbot``.
@@ -111,16 +116,11 @@ the [final_report_fin_version.pdf](https://github.com/sun510001/RQ_Chatbot/blob/
     python run_train_classifier.py
     ```
     * If your memory or gpu memory is not enough for running whole data in the dataset, you can run it in a section.
-        
-## For chatbot
-You can run the run_chatbot.py directly after you did [preparations](#Preparations).
-```script
-Python run_chatbot.py
-```
+    
 
-## Train models
+## Training models
 If you want to train model, please read it.
-### Situation classification for SRL
+### Situation classification for SRL (Sarcastic, Rhetorical question and Literal responses)
 * We use the dataset
 from [Twitter and Reddit data for the Shared Task](https://github.com/EducationalTestingService/sarcasm)
 * Pre-processed dataset is ``sarcasm_merge_triple_v8.csv`` in ``Situation_Classification_for_SRL/data/``.
