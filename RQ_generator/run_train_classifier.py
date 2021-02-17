@@ -201,6 +201,7 @@ if __name__ == '__main__':
 
     df = df.apply(generate, axis=1)
     # df.to_csv('../dialogue_for_train_after_rq_1.csv', index=False)  # run for a part of data
+    # sys.exit()
     df.to_csv('../dialogue_for_train_after_rq.csv', index=False)
 
 
@@ -215,6 +216,7 @@ if __name__ == '__main__':
     #     else:
     #         df_all = df_all.append(df, ignore_index=True)
     # df_all.to_csv('../dialogue_for_train_after_rq.csv', index=False)
+
 
     """get evaluation data"""
     path = '../dialogue_for_train_after_rq.csv'
