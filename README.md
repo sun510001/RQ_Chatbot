@@ -83,7 +83,8 @@ Python run_chatbot.py
 ```
 
 ## The Evaluation Mode
-The evaluation mode can output all types of responses in any situation of a conversation.  
+The evaluation mode can output all types of responses in any situation of a conversation. 
+
 0. Uncomment codes that are under the ``predict/for evaluation`` in every python file, which is run below, 
    and comment out all codes that are under the ``for chatbot``.
    
