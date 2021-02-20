@@ -83,7 +83,7 @@ Python run_chatbot.py
 ```
 
 ## The Evaluation Mode
-The evaluation mode can output all types of responses in any situation of a conversation.
+The evaluation mode can output all types of responses in any situation of a conversation.  
 0. Uncomment codes that are under the ``predict/for evaluation`` in every python file, which is run below, 
    and comment out all codes that are under the ``for chatbot``.
    
@@ -127,7 +127,7 @@ The evaluation mode can output all types of responses in any situation of a conv
     
 
 ## Training models
-If you want to train models for the situation classification and the RQ generator, please read it.
+If you want to train models for the situation classification and the RQ generator by yourself, please read it.
 ### Situation classification for SRL (Sarcastic, Rhetorical question and Literal responses)
 * We use the dataset
 from [Twitter and Reddit data for the Shared Task](https://github.com/EducationalTestingService/sarcasm)
