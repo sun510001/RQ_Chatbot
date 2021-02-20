@@ -85,23 +85,23 @@ Python run_chatbot.py
 ## The Evaluation Mode
 The evaluation mode can output all types of responses in any situation of a conversation. 
 
-0. Uncomment codes that are under the ``predict/for evaluation`` in every python file, which is run below, 
+1. Uncomment codes that are under the ``predict/for evaluation`` in every python file, which is run below, 
    and comment out all codes that are under the ``for chatbot``.
    
-1. Generate literal responses
+2. Generate literal responses
     * Run the literal generator
         ```script
         python run_generate_evaluation.py
         ```
   
-2. Generate the situation classification
+3. Generate the situation classification
     ```script
     cd Situation_Classification_for_SRL/
     python run_predict.py
     cd ..
     ```
 
-3. Generate the sarcastic responses
+4. Generate the sarcastic responses
     ```script
     clone https://github.com/tuhinjubcse/SarcasmGeneration-ACL2020.git
     cd SarcasmGeneration-ACL2020/
@@ -119,7 +119,7 @@ The evaluation mode can output all types of responses in any situation of a conv
         python generate_sarcasm.py
         ```
 
-4. Generate the RQ responses
+5. Generate the RQ responses
     ```script
     python run_train_classifier.py
     ```
