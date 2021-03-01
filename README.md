@@ -22,7 +22,7 @@ the chatbot more appropriate and human-like in a conversation. Additionally, we 
 previous contexts to decide when to generate a literal response, sarcastic response, and RQ.
 
 You can get more information by reading 
-the [final_report_fin_version.pdf](https://github.com/sun510001/RQ_Chatbot/blob/master/final_report_fin_version.pdf) and the [thesis for the Degree of Master of Engineering](https://uec.repo.nii.ac.jp/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=9919&item_no=1&page_id=13&block_id=21).
+the [report (2 pages)](https://github.com/sun510001/RQ_Chatbot/blob/master/final_report_fin_version.pdf) and the [thesis for the Degree of Master of Engineering (53 pages)](https://uec.repo.nii.ac.jp/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=9919&item_no=1&page_id=13&block_id=21).
 
 ## Preparations
 1. Clone this project:
