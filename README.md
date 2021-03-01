@@ -22,7 +22,7 @@ the chatbot more appropriate and human-like in a conversation. Additionally, we 
 previous contexts to decide when to generate a literal response, sarcastic response, and RQ.
 
 You can get more information by reading 
-the [final_report_fin_version.pdf](https://github.com/sun510001/RQ_Chatbot/blob/master/final_report_fin_version.pdf).
+the [final_report_fin_version.pdf](https://github.com/sun510001/RQ_Chatbot/blob/master/final_report_fin_version.pdf) and the [Thesis](https://uec.repo.nii.ac.jp/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=9919&item_no=1&page_id=13&block_id=21)
 
 ## Preparations
 1. Clone this project:
@@ -148,11 +148,10 @@ from [Twitter and Reddit data for the Shared Task](https://github.com/Educationa
 
 ## Citing Us
 Please email me at sqf121@gmail.com for any problems/doubts. Further, you can raise issues on Github or suggest improvements.
-Please leave a star and cite us if you use our code, data, or report
+Please leave a star and cite us if you use our code, data, or thesis.
 ```script
-@article{RQChatbot,
-author = {Qifan Sun},
-title = {Automatic Generation of Rhetorical Questions and Its Application to a Chatbot},
-year = {2021}
+@misc{weko_9919_1,
+   author	 = "Sun,Qifan",
+   title	 = "Automatic Generation of Rhetorical Questions and Its Application to a Chatbot"
 }
 ```
